@@ -1,0 +1,23 @@
+namespace fb_file_table;
+
+table fileEntry {
+    name: string;
+    offset: ulong;
+    size: ulong;
+}
+
+table thombStone {
+    value: ulong;
+}
+
+union Any {
+    fileEntry,
+    thombStone,
+}
+
+
+table BinaryFileTable{
+    fileTable: [Any];
+}
+
+root_type BinaryFileTable;
