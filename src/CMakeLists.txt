@@ -42,6 +42,9 @@ target_link_libraries(shs_read shs)
 add_executable(shs_pack shs_pack_main.c)
 target_link_libraries(shs_pack shs)
 
+install(TARGETS shs_read shs_pack
+        RUNTIME DESTINATION bin)
+
 if(SHS_INSTALL_SRC)
   # install all files ends with .c in the current source directory to destinaton
   # .
