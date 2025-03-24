@@ -10,3 +10,5 @@ add_library(lflatccrt
     json_parser.c
     json_printer.c
 )
+
+target_compile_options(lflatccrt PRIVATE -fPIC)

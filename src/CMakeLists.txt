@@ -1,7 +1,7 @@
 # aux_source_directory(${CMAKE_SOURCE_DIR}/src SRC_LIST)
 
 set(SRC_LIST file_table.c q_string.c shs_accessor.c shs_binary.c shs_file.c
-             shs_inner_file_table.c)
+             shs_inner_file_table.c shs_pack.c)
 
 # Set the path to the external libraries include directory
 set(HASH_DIR ${CMAKE_SOURCE_DIR}/external/hash)
@@ -33,6 +33,14 @@ install(TARGETS shs
 
 # Link the flatccrt library
 target_link_libraries(shs PUBLIC lflatccrt)
+
+# Add an executable to generate shs_read.
+add_executable(shs_read shs_read_main.c)
+target_link_libraries(shs_read shs)
+
+#Add an executable to generate shs_pack.
+add_executable(shs_pack shs_pack_main.c)
+target_link_libraries(shs_pack shs)
 
 if(SHS_INSTALL_SRC)
   # install all files ends with .c in the current source directory to destinaton

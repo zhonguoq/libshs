@@ -1,8 +1,8 @@
 class Shs < Formula
   desc "A C library for packaging directories into a single file"
   homepage "https://github.com/zhonguoq/libshs"
-  url "https://github.com/zhonguoq/libshs/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "e38611f788ba28e882bda788e9b2785401830891a1eb267147db7402b2964d12"
+  url "https://github.com/zhonguoq/libshs/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "e9628e15a620f39d06732b392188a57fb47af986cfa47feebe313fdc96d4a469"
   license "MIT"
 
   depends_on "cmake" => :build  # 如果使用 CMake 构建
